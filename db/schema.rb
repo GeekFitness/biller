@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160716204917) do
+ActiveRecord::Schema.define(version: 20160716211239) do
+
+  create_table "account_entries", force: :cascade do |t|
+    t.float    "time"
+    t.integer  "customer_id"
+    t.integer  "employee_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["customer_id"], name: "index_account_entries_on_customer_id"
+    t.index ["employee_id"], name: "index_account_entries_on_employee_id"
+  end
 
   create_table "accounts", force: :cascade do |t|
     t.string   "type"
@@ -19,16 +29,6 @@ ActiveRecord::Schema.define(version: 20160716204917) do
     t.string   "about"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "time_entries", force: :cascade do |t|
-    t.float    "time"
-    t.integer  "customer_id"
-    t.integer  "employee_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["customer_id"], name: "index_time_entries_on_customer_id"
-    t.index ["employee_id"], name: "index_time_entries_on_employee_id"
   end
 
 end

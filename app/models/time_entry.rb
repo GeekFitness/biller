@@ -1,4 +1,3 @@
-class TimeEntry < ApplicationRecord
-	belongs_to :customer, required: false
+class TimeEntry < AccountEntry
 	belongs_to :employee, required: false
 end
