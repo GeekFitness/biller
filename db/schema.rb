@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20160716211239) do
     t.integer  "employee_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "account_id"
     t.index ["customer_id"], name: "index_account_entries_on_customer_id"
     t.index ["employee_id"], name: "index_account_entries_on_employee_id"
   end

@@ -1,3 +1,3 @@
 class TimeEntry < AccountEntry
-	belongs_to :employee, required: false
+	belongs_to :employee
 end
